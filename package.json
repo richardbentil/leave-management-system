@@ -1,0 +1,46 @@
+{
+  "name": "leave-management-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "18.11.10",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "axios": "^1.2.1",
+    "bootstrap": "^5.2.2",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "formik": "^2.2.9",
+    "jest-environment-jsdom": "^29.2.1",
+    "next": "13.0.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "reactstrap": "^9.1.4",
+    "sass": "^1.55.0",
+    "typescript": "4.9.3",
+    "yup": "^0.32.11"
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richardbentil/leave-management-system.git"
+  },
+  "keywords": [
+    "React",
+    "nextjs"
+  ],
+  "author": "Richard Bentil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richardbentil/leave-management-system.git/issues"
+  },
+  "homepage": "https://github.com/richardbentil/leave-management-system.git#readme"
+}
