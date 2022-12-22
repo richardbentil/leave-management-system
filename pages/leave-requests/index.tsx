@@ -66,14 +66,28 @@ function LeaveRequestList() {
               <p>There are no leave request</p>
             </div>
           )
-          :
-          <ul className='my-4'>
-            {leaveRequests.map((leaveRequest: any, index: number) => (
-              <li key={index} className="pb-4 border-bottom">
-                {leaveRequest.employeeName} - {leaveRequest.startDate} - {leaveRequest.endDate}
-              </li>
-            ))}
-          </ul>
+          : (
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Employee ID</th>
+                <th>Employee name</th>
+                <th>Leave dates</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {leaveRequests.map((leaveRequest: any, index: number) => (
+                <tr  key={index}>
+                  <td scope="row">{leaveRequest.employeeId}</td>
+                  <td>{leaveRequest.employeeName}</td>
+                  <td>{leaveRequest.startDate} - {leaveRequest.endDate}</td>
+                  <td><Link href={`leave-details/${leaveRequest?.id}`}>View details</Link></td>
+                </tr>
+              ))}
+            </tbody>
+            </table>
+            )
         }
       </>
     )
