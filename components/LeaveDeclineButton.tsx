@@ -6,19 +6,24 @@ function LeaveDeclineButton({ id, setError, setMessage }: any) {
     
     const handleDecline = async() => {
     // send request to API to update item status to "approved"
-    setLoading(true)
+      setLoading(true)
+      
+    const session = sessionStorage.getItem("user")
+    const user = session && JSON.parse(session)
 
     try {
       // submit form data to backend or API
       const response = await axios.put(
         'https://my-api.com/leave-requests/' + id, {
-          data: {leaveStatus: "Approved"}
+          headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + user?.token },
+          data: {leaveStatus: "Declined"}
         }
       );
       
       const data = response.data
+      setLoading(false)
       if (data.status === "Ok") {
-        setMessage("Leave request approved")
+        setMessage("Leave request declined")
       } else {
         setError(data?.error_message)
       }

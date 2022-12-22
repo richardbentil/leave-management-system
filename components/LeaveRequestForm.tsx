@@ -35,7 +35,8 @@ function LeaveRequestForm() {
             data: values
         }
         );
-        const data = response.data
+      const data = response.data
+      setLoading(false)
         if (data.status === "Ok") {
             setMessage("Leave request sent")
             actions.resetForm()
